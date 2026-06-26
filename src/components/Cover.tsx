@@ -52,12 +52,8 @@ export default function Cover() {
 
       <div className="max-w-[1400px] mx-auto w-full relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-8">
         
-        {/* Left Column: Abstract Numbering */}
-        <div className="hidden lg:flex col-span-1 flex-col justify-end pb-12">
-          <div className="text-vertical font-mono text-xs tracking-[0.3em] text-secondary uppercase">
-            Issue 01 — 2026
-          </div>
-        </div>
+        {/* Left Column: Spacer */}
+        <div className="hidden lg:flex col-span-1"></div>
 
         {/* Main Typography */}
         <div className="col-span-1 lg:col-span-11 flex flex-col justify-center lg:pl-16">
@@ -65,7 +61,7 @@ export default function Cover() {
             <span className="abstract-shape inline-block w-16 h-[2px] bg-primary mb-6" />
           </div>
 
-          <h1 ref={titleRef} className="font-heading text-5xl md:text-7xl lg:text-[7rem] xl:text-[8rem] leading-[0.9] tracking-tighter text-primary uppercase mb-24 overflow-hidden">
+          <h1 ref={titleRef} className="font-heading text-5xl md:text-7xl lg:text-[7rem] xl:text-[8rem] leading-[0.9] tracking-tighter text-primary uppercase mb-32 overflow-hidden">
             <div className="flex flex-wrap gap-x-6 md:gap-x-12">
               <span className="word inline-block">Pranav</span>
             </div>
@@ -75,17 +71,17 @@ export default function Cover() {
             </div>
           </h1>
 
-          <div ref={subtitleRef} className="flex flex-col gap-4 border-l border-border pl-8 max-w-xl">
-            <p className="text-xs md:text-sm font-mono tracking-[0.2em] text-secondary uppercase mb-2">
+          <div ref={subtitleRef} className="flex flex-col gap-6 border-l border-border pl-8 md:pl-12 max-w-4xl mb-24">
+            <p className="text-sm md:text-base font-mono tracking-[0.2em] text-secondary uppercase mb-4">
               Exploring
             </p>
-            <p className="text-lg md:text-2xl font-light text-primary tracking-wide">
+            <p className="text-4xl md:text-5xl font-light text-primary tracking-tight leading-relaxed">
               Full-Stack Development
             </p>
-            <p className="text-lg md:text-2xl font-light text-primary tracking-wide">
+            <p className="text-4xl md:text-5xl font-light text-primary tracking-tight leading-relaxed">
               Artificial Intelligence & Machine Learning
             </p>
-            <p className="text-lg md:text-2xl font-light text-primary tracking-wide">
+            <p className="text-4xl md:text-5xl font-light text-primary tracking-tight leading-relaxed">
               Computer Vision
             </p>
           </div>

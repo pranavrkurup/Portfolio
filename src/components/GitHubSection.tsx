@@ -24,6 +24,39 @@ export default function GitHubSection() {
     );
   }, []);
 
+  const buttonRef = useRef<HTMLAnchorElement>(null);
+
+  useEffect(() => {
+    const button = buttonRef.current;
+    if (!button) return;
+
+    const xTo = gsap.quickTo(button, "x", { duration: 1, ease: "elastic.out(1, 0.3)" });
+    const yTo = gsap.quickTo(button, "y", { duration: 1, ease: "elastic.out(1, 0.3)" });
+
+    const handleMouseMove = (e: MouseEvent) => {
+      const { clientX, clientY } = e;
+      const { height, width, left, top } = button.getBoundingClientRect();
+      const x = clientX - (left + width / 2);
+      const y = clientY - (top + height / 2);
+      // Gentle pull effect
+      xTo(x * 0.3);
+      yTo(y * 0.3);
+    };
+
+    const handleMouseLeave = () => {
+      xTo(0);
+      yTo(0);
+    };
+
+    button.addEventListener("mousemove", handleMouseMove);
+    button.addEventListener("mouseleave", handleMouseLeave);
+
+    return () => {
+      button.removeEventListener("mousemove", handleMouseMove);
+      button.removeEventListener("mouseleave", handleMouseLeave);
+    };
+  }, []);
+
   return (
     <section id="github" ref={sectionRef} className="relative py-32 border-t border-border overflow-hidden">
       
@@ -49,6 +82,7 @@ export default function GitHubSection() {
         </p>
 
         <a 
+          ref={buttonRef}
           href="https://github.com/pranavrkurup"
           target="_blank"
           rel="noopener noreferrer"
