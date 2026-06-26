@@ -7,7 +7,7 @@ export default function Skills() {
 
   const groups = [
     { title: "Development Workflow", skills: ["AI-Assisted Development", "Rapid Prototyping"] },
-    { title: "Languages", skills: ["Python", "C", "JavaScript", "TypeScript"] },
+    { title: "Languages", skills: ["Python", "C", "JavaScript"] },
     { title: "Web Development", skills: ["React.js", "HTML", "CSS", "Tailwind CSS"] },
     { title: "Databases & Cloud", skills: ["MongoDB", "MySQL", "Supabase", "Node.js", "Express.js"] },
     { title: "Tools", skills: ["Git", "GitHub", "Vercel", "VS Code"] }
