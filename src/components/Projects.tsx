@@ -11,14 +11,14 @@ export default function Projects() {
       tech: ["Python", "YOLOv8", "OpenCV", "NumPy"],
       desc: "An image-based traffic violation detection system that utilizes YOLOv8 and OpenCV to accurately detect vehicles crossing stop lines during red traffic signals in real-time.",
       image: "/project1.png",
-      link: "https://github.com",
+      link: "https://github.com/pranavrkurup/stop-line-violation-detection",
     },
     {
       title: "LocalFix Home Service Booking",
       tech: ["MongoDB", "Express", "React", "Node", "Tailwind"],
       desc: "A full-stack MERN application connecting customers with local service providers. Features include location-based discovery, real-time booking, and role-based secure dashboards.",
       image: "/project2.png",
-      link: "https://github.com",
+      link: "https://github.com/pranavrkurup/LocalFix",
     }
   ];
 
@@ -61,7 +61,7 @@ export default function Projects() {
             target="_blank"
             rel="noopener noreferrer"
             ref={el => { projectsRef.current[index] = el; }}
-            className={`group relative flex flex-col lg:flex-row gap-12 lg:gap-24 items-start p-8 md:p-12 border border-transparent hover:border-border hover:shadow-[0_20px_40px_rgb(0,0,0,0.04)] hover:-translate-y-2 transition-all duration-300 ease-out cursor-pointer bg-bg hover:bg-bg/50 ${index % 2 === 1 ? 'lg:flex-row-reverse' : ''}`}
+            className={`group relative flex flex-col lg:flex-row gap-12 lg:gap-24 items-start p-8 md:p-12 border border-transparent hover:border-secondary hover:shadow-[0_20px_40px_rgb(0,0,0,0.04)] hover:-translate-y-2 transition-all duration-300 ease-out cursor-pointer bg-bg hover:bg-bg/50 ${index % 2 === 1 ? 'lg:flex-row-reverse' : ''}`}
           >
             
             {/* Numbering and Image Column (30% width) */}
@@ -73,14 +73,14 @@ export default function Projects() {
                 <img 
                   src={project.image} 
                   alt={project.title} 
-                  className="w-full h-full object-cover filter grayscale opacity-90 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-700 ease-out scale-[1.02] group-hover:scale-110"
+                  className="w-full h-full object-cover filter grayscale opacity-90 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-700 ease-out scale-[1.02] group-hover:scale-[1.03]"
                 />
               </div>
             </div>
 
             {/* Typography Column (70% width) */}
             <div className="w-full lg:w-[70%] flex flex-col pt-4 lg:pt-32 relative">
-              <h3 className="font-heading text-4xl md:text-6xl leading-[1] tracking-tighter text-primary mb-12 uppercase break-words inline-flex items-start gap-4">
+              <h3 className="font-heading text-4xl md:text-6xl leading-[1] tracking-tighter text-primary mb-12 uppercase break-words inline-flex items-start gap-4 transition-transform duration-300 group-hover:translate-x-1">
                 {project.title}
                 <span className="opacity-0 -translate-x-8 translate-y-4 group-hover:opacity-100 group-hover:translate-x-0 group-hover:translate-y-0 transition-all duration-500 text-accent-red flex-shrink-0 mt-2">
                   <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -96,16 +96,25 @@ export default function Projects() {
                     {project.desc}
                   </p>
                 </div>
-                <div>
-                  <p className="text-xs font-mono uppercase tracking-[0.2em] text-secondary mb-4">Stack</p>
-                  <div className="flex flex-col gap-2">
-                    {project.tech.map(t => (
-                      <span key={t} className="text-sm font-mono uppercase tracking-widest text-primary">
-                        {t}
-                      </span>
-                    ))}
+                <div className="flex flex-col justify-between h-full">
+                  <div>
+                    <p className="text-xs font-mono uppercase tracking-[0.2em] text-secondary mb-4">Stack</p>
+                    <div className="flex flex-col gap-2">
+                      {project.tech.map(t => (
+                        <span key={t} className="text-sm font-mono uppercase tracking-widest text-primary">
+                          {t}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                  
+                  <div className="mt-8 pt-6 border-t border-border">
+                    <p className="text-xs font-mono uppercase tracking-[0.2em] text-secondary group-hover:text-primary transition-colors duration-300">
+                      GitHub Repository ↗
+                    </p>
                   </div>
                 </div>
+              </div>
               </div>
             </div>
 
