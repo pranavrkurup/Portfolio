@@ -7,7 +7,7 @@ export default function Interests() {
 
   const interests = [
     { text: "FULL-STACK DEVELOPMENT", justify: "justify-start", color: "text-primary" },
-    { text: "ARTIFICIAL INTELLIGENCE & MACHINE LEARNING", justify: "justify-start md:justify-end", color: "text-secondary" },
+    { text: "AI & ML", justify: "justify-start md:justify-end", color: "text-secondary" },
     { text: "COMPUTER VISION", justify: "justify-start md:justify-center", color: "text-accent-red" }
   ];
 
