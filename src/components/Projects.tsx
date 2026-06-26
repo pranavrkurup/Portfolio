@@ -114,9 +114,8 @@ export default function Projects() {
                     </p>
                   </div>
                 </div>
+                </div>
               </div>
-              </div>
-            </div>
 
           </a>
         ))}
