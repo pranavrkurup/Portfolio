@@ -1,0 +1,70 @@
+@import 'tailwindcss';
+
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=JetBrains+Mono:wght@400;500;700&family=Inter:wght@300;400;500;600&family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
+@import url('https://api.fontshare.com/v2/css?f[]=general-sans@200,300,400,500,600,700&family=satoshi:wght@300;400;500;700;900&display=swap');
+
+@theme {
+  --color-background: #F4F1EA;
+  --color-primary: #171717;
+  --color-secondary: #5E5E5E;
+  --color-accent-red: #C24A35;
+  --color-border: #D7D1C8;
+
+  --font-sans: "General Sans", "Satoshi", "Inter", sans-serif;
+  --font-heading: "Space Grotesk", sans-serif;
+  --font-mono: "IBM Plex Mono", "JetBrains Mono", monospace;
+}
+
+@layer base {
+  body {
+    background-color: var(--color-background);
+    color: var(--color-primary);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+    cursor: none;
+  }
+  
+  ::selection {
+    background-color: var(--color-accent-red);
+    color: #FFFFFF;
+  }
+  
+  a, button {
+    cursor: none;
+  }
+}
+
+/* Base resets for Lenis */
+html.lenis, html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-smooth iframe {
+  pointer-events: none;
+}
+
+@layer utilities {
+  .paper-noise {
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.08'/%3E%3C/svg%3E");
+    pointer-events: none;
+  }
+
+  .text-vertical {
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+  }
+}
