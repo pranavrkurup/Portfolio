@@ -98,14 +98,25 @@ export default function Projects() {
                 </div>
               </div>
 
-              <div className="flex gap-8">
-                <a href="#" className="group inline-flex items-center gap-4 text-xs font-mono uppercase tracking-[0.2em] text-primary" data-cursor="hover">
-                  <span className="w-8 h-[1px] bg-primary group-hover:w-16 transition-all duration-300" />
-                  Live Demo
-                </a>
-                <a href="#" className="group inline-flex items-center gap-4 text-xs font-mono uppercase tracking-[0.2em] text-secondary hover:text-primary transition-colors" data-cursor="hover">
-                  <span className="w-8 h-[1px] bg-secondary group-hover:bg-primary group-hover:w-16 transition-all duration-300" />
-                  GitHub
+              <div className="flex pt-4 mt-8">
+                <a 
+                  href="#" 
+                  className="group flex items-center justify-between w-full md:w-auto md:inline-flex gap-8 px-8 py-5 border border-border hover:border-primary text-xs font-mono uppercase tracking-[0.2em] text-primary transition-colors duration-500" 
+                  data-cursor="hover"
+                >
+                  <span className="relative flex overflow-hidden">
+                    <span className="inline-block transition-transform duration-500 ease-[cubic-bezier(0.19,1,0.22,1)] group-hover:-translate-y-[150%]">GitHub Repository</span>
+                    <span className="absolute inline-block transition-transform duration-500 ease-[cubic-bezier(0.19,1,0.22,1)] translate-y-[150%] group-hover:translate-y-0">GitHub Repository</span>
+                  </span>
+                  
+                  <span className="relative flex overflow-hidden items-center justify-center w-5 h-5">
+                    <svg className="absolute transition-transform duration-500 ease-[cubic-bezier(0.19,1,0.22,1)] group-hover:translate-x-[150%]" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" strokeWidth="1.5" strokeLinecap="square" strokeLinejoin="miter"/>
+                    </svg>
+                    <svg className="absolute transition-transform duration-500 ease-[cubic-bezier(0.19,1,0.22,1)] -translate-x-[150%] group-hover:translate-x-0" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" strokeWidth="1.5" strokeLinecap="square" strokeLinejoin="miter"/>
+                    </svg>
+                  </span>
                 </a>
               </div>
             </div>
