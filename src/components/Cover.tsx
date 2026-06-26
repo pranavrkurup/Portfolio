@@ -79,7 +79,7 @@ export default function Cover() {
               Full-Stack Development
             </p>
             <p className="text-4xl md:text-5xl font-light text-primary tracking-tight leading-relaxed">
-              Artificial Intelligence & Machine Learning
+              AI & ML
             </p>
             <p className="text-4xl md:text-5xl font-light text-primary tracking-tight leading-relaxed">
               Computer Vision
