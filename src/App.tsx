@@ -1,5 +1,5 @@
 import { useEffect, useRef } from 'react';
-
+import type { CSSProperties } from 'react';
 import gsap from 'gsap';
 import { FiGithub, FiLinkedin, FiInstagram, FiMail } from 'react-icons/fi';
 
@@ -190,11 +190,15 @@ function App() {
           <div className="skills-area scrap-animate" aria-labelledby="skills-title">
             <div className="skills-section">
               <h2 id="core-skills-title">
-                <span className="heading-dot" aria-hidden="true" /> Core Skills
+                <span className="icon">◉</span> Core Skills
               </h2>
               <div className="skills-cloud" aria-label="Core Skills">
-                {coreSkills.map((skill) => (
-                  <span className="skill-pill" key={skill}>
+                {coreSkills.map((skill, index) => (
+                  <span
+                    className="skill-pill"
+                    key={skill}
+                    style={{ '--spin': `${((index * 13) % 15) - 7}deg` } as CSSProperties}
+                  >
                     {skill}
                   </span>
                 ))}
@@ -203,11 +207,15 @@ function App() {
 
             <div className="skills-section">
               <h2 id="tools-skills-title">
-                <span className="heading-dot" aria-hidden="true" /> Tools & Workflows
+                <span className="icon">◉</span> Tools & Workflows
               </h2>
               <div className="skills-cloud" aria-label="Tools & Workflows">
-                {toolsSkills.map((skill) => (
-                  <span className="skill-pill" key={skill}>
+                {toolsSkills.map((skill, index) => (
+                  <span
+                    className="skill-pill"
+                    key={skill}
+                    style={{ '--spin': `${((index * 17) % 15) - 7}deg` } as CSSProperties}
+                  >
                     {skill}
                   </span>
                 ))}
