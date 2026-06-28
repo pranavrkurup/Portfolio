@@ -4,6 +4,8 @@ import gsap from 'gsap';
 export default function Contact() {
   const sectionRef = useRef<HTMLElement>(null);
   const titleRef = useRef<HTMLHeadingElement>(null);
+  const infoRefs = useRef<(HTMLDivElement | HTMLSpanElement | null)[]>([]);
+  const socialRefs = useRef<(HTMLAnchorElement | null)[]>([]);
 
   useEffect(() => {
     if (!sectionRef.current) return;
@@ -11,6 +13,8 @@ export default function Contact() {
     const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     if (prefersReducedMotion) {
       gsap.set(titleRef.current?.children || [], { y: 0, opacity: 1 });
+      gsap.set(infoRefs.current.filter(Boolean), { y: 0, opacity: 1 });
+      gsap.set(socialRefs.current.filter(Boolean), { y: 0, opacity: 1 });
       return;
     }
 
@@ -28,6 +32,24 @@ export default function Contact() {
         }
       }
     );
+
+    const elementsToAnimate = [...infoRefs.current, ...socialRefs.current].filter(Boolean);
+    if (elementsToAnimate.length > 0) {
+      gsap.fromTo(elementsToAnimate,
+        { y: 30, opacity: 0 },
+        {
+          y: 0,
+          opacity: 1,
+          duration: 0.8,
+          stagger: 0.1,
+          ease: 'power3.out',
+          scrollTrigger: {
+            trigger: sectionRef.current,
+            start: 'top 75%',
+          }
+        }
+      );
+    }
   }, []);
 
   return (
@@ -61,25 +83,26 @@ export default function Contact() {
 
       {/* Footer Info Grid */}
       <div className="max-w-[1400px] mx-auto w-full grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 md:gap-12 border-t border-primary/30 pt-10 px-6 md:px-16 mt-24">
-        <div className="flex flex-col gap-2 items-center sm:items-start text-center sm:text-left">
+        <div ref={el => { infoRefs.current[0] = el; }} className="flex flex-col gap-2 items-center sm:items-start text-center sm:text-left">
           <span className="text-[10px] md:text-xs font-mono tracking-[0.2em] text-secondary uppercase">Name</span>
           <span className="text-xs md:text-sm font-sans text-primary uppercase tracking-widest">Pranav R Kurup</span>
         </div>
-        <div className="flex flex-col gap-2 items-center sm:items-start text-center sm:text-left">
+        <div ref={el => { infoRefs.current[1] = el; }} className="flex flex-col gap-2 items-center sm:items-start text-center sm:text-left">
           <span className="text-[10px] md:text-xs font-mono tracking-[0.2em] text-secondary uppercase">Location</span>
           <span className="text-xs md:text-sm font-sans text-primary uppercase tracking-widest">Kerala, India</span>
         </div>
         <div className="flex flex-col gap-4 sm:col-span-2 md:col-span-2 items-center md:items-end text-center md:text-right">
-          <span className="text-[10px] md:text-xs font-mono tracking-[0.2em] text-secondary uppercase hidden md:block">Social</span>
+          <span ref={el => { infoRefs.current[2] = el; }} className="text-[10px] md:text-xs font-mono tracking-[0.2em] text-secondary uppercase hidden md:block">Social</span>
           <div className="flex flex-wrap justify-center md:justify-end gap-6 md:gap-8 w-full">
             {[
               { label: "Email", url: "mailto:pranavrkurup6@gmail.com" },
               { label: "GitHub", url: "https://github.com/pranavrkurup" },
-              { label: "LinkedIn", url: "https://www.linkedin.com/in/pranav-r-kurup-4065553a5" },
-              { label: "Instagram", url: "https://www.instagram.com/_prnvv" }
-            ].map(link => (
+              { label: "LinkedIn", url: "https://www.linkedin.com/in/pranav-r-kurup-4065553a5?utm_source=share_via&utm_content=profile&utm_medium=member_android" },
+              { label: "Instagram", url: "https://www.instagram.com/_prnvv?igsh=anM5eWJ1NmkyMmd4" }
+            ].map((link, index) => (
               <a
                 key={link.label}
+                ref={el => { socialRefs.current[index] = el; }}
                 href={link.url}
                 target="_blank"
                 rel="noopener noreferrer"
