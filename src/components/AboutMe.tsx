@@ -41,54 +41,55 @@ export default function AboutMe() {
   }, []);
 
   return (
-    <section id="about" ref={sectionRef} className="relative py-32 p-8 md:p-16 border-t border-border overflow-hidden">
+    <section id="about" ref={sectionRef} className="relative py-32 md:py-48 p-8 md:p-24 border-t border-border overflow-hidden">
       
       {/* Top Divider / Number */}
-      <div className="absolute top-12 left-8 md:left-16 z-10 w-full flex items-center gap-4">
-        <div className="w-4 h-4 rounded-full bg-accent-red" />
-        <div className="text-xs font-mono tracking-[0.2em] text-secondary uppercase">02 — ABOUT</div>
-        <div className="flex-1 h-[1px] bg-border mr-16" />
+      <div className="absolute top-12 md:top-16 left-8 md:left-24 z-10 w-full flex items-center gap-6">
+        <div className="w-3 h-3 rounded-full bg-accent-red" />
+        <div className="text-[10px] md:text-xs font-mono tracking-[0.25em] text-secondary uppercase">02 — ABOUT</div>
+        <div className="flex-1 h-[1px] bg-border mr-8 md:mr-24" />
       </div>
 
-      <div className="max-w-[1400px] mx-auto w-full grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-24 items-center pt-16">
+      <div className="max-w-[1600px] mx-auto w-full grid grid-cols-1 lg:grid-cols-12 gap-16 lg:gap-32 items-center pt-16 md:pt-24">
         
         {/* Left Column: Typography Block */}
         <div ref={textRef} className="col-span-1 lg:col-span-7 flex flex-col justify-center order-2 lg:order-1">
-          <h2 className="font-heading text-6xl md:text-[6rem] leading-[0.9] tracking-tighter text-primary mb-16 uppercase">
+          <h2 className="font-heading font-light text-6xl md:text-[8rem] leading-[0.9] tracking-tighter text-primary mb-24 uppercase">
             Background
           </h2>
           
-          <div className="space-y-12 max-w-2xl">
-            <div className="border-l-2 border-primary pl-6">
-              <p className="text-xs font-mono uppercase tracking-[0.2em] text-secondary mb-2">Name</p>
-              <p className="text-2xl text-primary font-medium tracking-wide uppercase">Pranav R Kurup</p>
+          <div className="space-y-16 max-w-2xl">
+            <div className="border-l border-primary pl-8">
+              <p className="text-xs md:text-sm font-mono uppercase tracking-[0.2em] text-secondary mb-4">Name</p>
+              <p className="text-3xl md:text-4xl text-primary font-light tracking-wide uppercase">Pranav R Kurup</p>
             </div>
 
-            <div className="border-l-2 border-border pl-6">
-              <p className="text-xs font-mono uppercase tracking-[0.2em] text-secondary mb-2">Education</p>
-              <p className="text-xl text-primary tracking-wide">BCA Third Year</p>
+            <div className="border-l border-border pl-8">
+              <p className="text-xs md:text-sm font-mono uppercase tracking-[0.2em] text-secondary mb-4">Education</p>
+              <p className="text-2xl md:text-3xl text-primary font-light tracking-wide">BCA Third Year</p>
             </div>
 
-            <div className="border-l-2 border-border pl-6">
-              <p className="text-xs font-mono uppercase tracking-[0.2em] text-secondary mb-4">Focus</p>
-              <p className="text-lg md:text-xl font-light leading-relaxed text-secondary text-justify">
-                I'm a student exploring full-stack development with a strong emerging focus on Artificial Intelligence and Computer Vision. I am actively building projects, solving complex problems, and expanding my technical foundation.
+            <div className="border-l border-border pl-8">
+              <p className="text-xs md:text-sm font-mono uppercase tracking-[0.2em] text-secondary mb-4">Location</p>
+              <p className="text-2xl md:text-3xl text-primary font-light tracking-wide">Kerala, India</p>
+            </div>
+            
+            <div className="pt-8">
+              <p className="text-xl md:text-2xl font-heading font-light italic text-primary">
+                "I build things that think."
               </p>
             </div>
           </div>
         </div>
 
         {/* Right Column: Minimal Abstract Illustration */}
-        <div className="col-span-1 lg:col-span-5 relative h-[50vh] flex items-center justify-center order-1 lg:order-2" ref={visualRef}>
-          <div className="relative w-full aspect-square border border-border flex items-center justify-center p-12 overflow-hidden bg-white/30 backdrop-blur-sm">
-            {/* Minimal CSS Geometric Art */}
-            <div className="absolute top-0 left-1/2 w-[1px] h-full bg-border" />
-            <div className="absolute top-1/2 left-0 w-full h-[1px] bg-border" />
+        <div className="col-span-1 lg:col-span-5 relative h-[40vh] md:h-[60vh] flex items-center justify-center order-1 lg:order-2" ref={visualRef}>
+          <div className="relative w-full aspect-square flex items-center justify-center p-12">
             
-            <div className="relative w-full h-full border border-primary/10 rounded-full flex items-center justify-center group" data-cursor="HOVER">
-              <div className="w-3/4 h-3/4 border border-primary/20 rounded-full transition-transform duration-1000 group-hover:scale-110" />
-              <div className="absolute top-1/4 right-1/4 w-12 h-12 bg-accent-red rounded-full mix-blend-multiply transition-transform duration-[2s] group-hover:-translate-x-8 group-hover:translate-y-8" />
-              <div className="absolute bottom-1/3 left-1/3 w-4 h-4 bg-primary rounded-full" />
+            <div className="relative w-full h-full border border-border/40 rounded-full flex items-center justify-center group" data-cursor="HOVER">
+              <div className="w-[85%] h-[85%] border border-border/60 rounded-full transition-transform duration-[1.5s] ease-out group-hover:scale-105" />
+              <div className="absolute top-[20%] right-[20%] w-16 h-16 bg-accent-red rounded-full mix-blend-multiply transition-transform duration-[2s] ease-out group-hover:-translate-x-12 group-hover:translate-y-12" />
+              <div className="absolute bottom-[25%] left-[25%] w-4 h-4 bg-primary rounded-full transition-transform duration-[1.5s] ease-out group-hover:scale-150" />
             </div>
           </div>
         </div>

@@ -6,11 +6,12 @@ export default function CurrentlyExploring() {
   const listRef = useRef<HTMLDivElement>(null);
 
   const topics = [
-    "Full-Stack Development",
-    "Artificial Intelligence",
+    "Full-Stack Web Development",
+    "AI & Machine Learning",
     "Computer Vision",
     "Data Structures & Algorithms",
-    "System Design"
+    "System Design",
+    "Scalable Software Development"
   ];
 
   useEffect(() => {

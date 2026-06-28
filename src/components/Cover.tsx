@@ -40,59 +40,51 @@ export default function Cover() {
   }, []);
 
   return (
-    <section id="cover" ref={sectionRef} className="relative min-h-[100svh] flex flex-col justify-center p-6 md:p-16 overflow-hidden">
+    <section id="cover" ref={sectionRef} className="relative min-h-[100svh] flex flex-col justify-center p-8 md:p-32 overflow-hidden">
       
       {/* Abstract Geometric Composition */}
       <div className="absolute inset-0 pointer-events-none z-0 overflow-hidden">
         {/* Soft Grid */}
-        <div className="absolute inset-0 bg-[linear-gradient(to_right,var(--color-border)_1px,transparent_1px),linear-gradient(to_bottom,var(--color-border)_1px,transparent_1px)] bg-[size:50px_50px] md:bg-[size:100px_100px] opacity-[0.10] md:opacity-[0.15]" />
+        <div className="absolute inset-0 bg-[linear-gradient(to_right,var(--color-border)_1px,transparent_1px),linear-gradient(to_bottom,var(--color-border)_1px,transparent_1px)] bg-[size:50px_50px] md:bg-[size:100px_100px] opacity-[0.20]" />
         
         {/* Thin circles and lines */}
-        <div className="abstract-shape absolute top-[-10%] right-[-20%] md:top-[20%] md:right-[15%] w-[80vw] h-[80vw] md:w-[40vw] md:h-[40vw] border border-border rounded-full opacity-30 md:opacity-50" />
-        <div className="abstract-shape absolute top-[5%] right-[-10%] md:top-[25%] md:right-[20%] w-[60vw] h-[60vw] md:w-[30vw] md:h-[30vw] border border-border rounded-full opacity-10 md:opacity-30" />
+        <div className="abstract-shape absolute top-[5%] right-[-10%] md:top-[10%] md:right-[5%] w-[80vw] h-[80vw] md:w-[40vw] md:h-[40vw] border border-border rounded-full opacity-30" />
         <div className="abstract-shape absolute bottom-0 left-[10%] md:left-1/4 w-[1px] h-[30vh] md:h-[40vh] bg-border" />
-        <div className="abstract-shape hidden md:block absolute top-1/3 left-0 w-[30vw] h-[1px] bg-border" />
-        
-        {/* Red Dot Accent */}
-        <div className="abstract-shape absolute top-[15%] right-[10%] md:top-[35%] md:right-[30%] w-4 h-4 md:w-8 md:h-8 rounded-full bg-accent-red mix-blend-multiply" />
       </div>
 
-      <div className="max-w-[1400px] mx-auto w-full relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-8">
+      <div className="max-w-[1600px] mx-auto w-full relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-24 items-center">
         
-        {/* Left Column: Spacer */}
-        <div className="hidden lg:flex col-span-1"></div>
-
         {/* Main Typography */}
-        <div className="col-span-1 lg:col-span-11 flex flex-col justify-center lg:pl-16 mt-16 md:mt-0">
-          <div className="mb-8 md:mb-12">
-            <span className="abstract-shape inline-block w-12 md:w-16 h-[2px] bg-primary mb-4 md:mb-6" />
+        <div className="col-span-1 lg:col-span-8 flex flex-col justify-center mt-16 md:mt-0">
+          <div className="mb-12 md:mb-16">
+            <span className="abstract-shape inline-block w-12 md:w-24 h-[1px] bg-primary mb-6" />
           </div>
 
-          <h1 ref={titleRef} className="font-heading text-[13vw] leading-[0.85] sm:text-7xl md:text-7xl lg:text-[7rem] xl:text-[8rem] tracking-tighter text-primary uppercase mb-16 md:mb-32 overflow-hidden">
+          <h1 ref={titleRef} className="font-heading font-light text-[15vw] leading-[0.8] sm:text-8xl md:text-8xl lg:text-[9rem] xl:text-[11rem] tracking-tighter text-primary uppercase mb-16 md:mb-24 overflow-hidden">
             <div className="flex flex-wrap gap-x-4 md:gap-x-12">
               <span className="word inline-block">Pranav</span>
             </div>
-            <div className="flex flex-wrap gap-x-4 md:gap-x-12 mt-1 md:mt-0">
+            <div className="flex flex-wrap gap-x-4 md:gap-x-12 mt-2 md:mt-4">
               <span className="word inline-block text-secondary">R</span>
               <span className="word inline-block">Kurup</span>
             </div>
           </h1>
 
-          <div ref={subtitleRef} className="flex flex-col gap-4 md:gap-6 border-l border-border pl-6 md:pl-12 max-w-4xl mb-16 md:mb-24">
-            <p className="text-xs md:text-base font-mono tracking-[0.2em] text-secondary uppercase mb-2 md:mb-4">
-              Exploring
+          <div ref={subtitleRef} className="flex flex-col gap-6 md:gap-8 border-l border-border pl-8 md:pl-16 max-w-4xl">
+            <p className="text-xs md:text-sm font-mono tracking-[0.25em] text-secondary uppercase mb-4">
+              Building at the intersection of
             </p>
-            <p className="text-2xl sm:text-3xl md:text-5xl font-light text-primary tracking-tight leading-relaxed md:leading-relaxed">
-              Full-Stack Development
+            <p className="text-3xl sm:text-4xl md:text-6xl font-light text-primary tracking-tight leading-tight md:leading-tight">
+              Software
             </p>
-            <p className="text-2xl sm:text-3xl md:text-5xl font-light text-primary tracking-tight leading-relaxed md:leading-relaxed">
-              AI & ML
+            <p className="text-3xl sm:text-4xl md:text-6xl font-light text-primary tracking-tight leading-tight md:leading-tight">
+              Intelligence
             </p>
-            <p className="text-2xl sm:text-3xl md:text-5xl font-light text-primary tracking-tight leading-relaxed md:leading-relaxed">
-              Computer Vision
+            <p className="text-3xl sm:text-4xl md:text-6xl font-light text-primary tracking-tight leading-tight md:leading-tight">
+              & Vision
             </p>
             
-            <div className="flex flex-wrap gap-4 mt-8 md:mt-12">
+            <div className="flex flex-wrap gap-4 mt-12 md:mt-16">
               {[
                 { label: "Instagram", url: "https://www.instagram.com/_prnvv?igsh=anM5eWJ1NmkyMmd4" },
                 { label: "LinkedIn", url: "https://www.linkedin.com/in/pranav-r-kurup-4065553a5?utm_source=share_via&utm_content=profile&utm_medium=member_android" },
@@ -104,11 +96,34 @@ export default function Cover() {
                   target="_blank"
                   rel="noopener noreferrer"
                   data-cursor="hover"
-                  className="abstract-shape px-6 py-2.5 rounded-full border border-border bg-background hover:bg-primary hover:text-background transition-all duration-300 text-xs font-mono uppercase tracking-[0.1em]"
+                  className="abstract-shape px-8 py-3 rounded-full border border-border bg-background hover:bg-primary hover:text-background transition-all duration-300 text-xs font-mono uppercase tracking-[0.1em]"
                 >
                   {link.label}
                 </a>
               ))}
+            </div>
+          </div>
+        </div>
+
+        {/* Portrait Treatment */}
+        <div className="col-span-1 lg:col-span-4 relative mt-16 lg:mt-0 flex justify-center lg:justify-end">
+          <div className="relative group w-full max-w-[340px] aspect-[4/5] rounded-[32px] overflow-hidden bg-white shadow-[0_20px_40px_rgba(0,0,0,0.04)] border border-border p-4 transition-transform duration-700 ease-out hover:-translate-y-2 hover:rotate-1">
+            <div className="w-full h-full rounded-[20px] overflow-hidden bg-background relative">
+              <img 
+                src="/src/assets/images/pranav-portrait.png" 
+                alt="Pranav R Kurup"
+                className="w-full h-full object-cover grayscale-[20%] contrast-125 transition-transform duration-1000 ease-out group-hover:scale-105"
+                onError={(e) => {
+                  e.currentTarget.src = "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=800&auto=format&fit=crop"; 
+                  // Fallback in case user hasn't uploaded image yet
+                }}
+              />
+            </div>
+            
+            {/* Minimal Badge */}
+            <div className="absolute -bottom-4 -left-4 bg-primary text-background px-6 py-3 rounded-full text-xs font-mono uppercase tracking-[0.2em] shadow-lg flex items-center gap-3">
+              <div className="w-1.5 h-1.5 rounded-full bg-accent-red animate-pulse" />
+              Available
             </div>
           </div>
         </div>

@@ -11,8 +11,6 @@ import Cover from './components/Cover';
 import AboutMe from './components/AboutMe';
 import Interests from './components/Interests';
 import Skills from './components/Skills';
-import Workflow from './components/Workflow';
-import Internship from './components/Internship';
 import Projects from './components/Projects';
 import GitHubSection from './components/GitHubSection';
 import CurrentlyExploring from './components/CurrentlyExploring';
@@ -44,8 +42,6 @@ function App() {
         <AboutMe />
         <Interests />
         <Skills />
-        <Workflow />
-        <Internship />
         <Projects />
         <GitHubSection />
         <CurrentlyExploring />

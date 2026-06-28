@@ -7,16 +7,17 @@ export default {
   theme: {
     extend: {
       colors: {
-        background: "#F4F1EA",
+        background: "#F5F4F1",
         primary: "#111111",
-        secondary: "#666666",
-        accent: "#F44336",
-        border: "rgba(0,0,0,0.08)",
-        hover: "#FF5A4E",
+        secondary: "#888880",
+        "accent-red": "#D4552A",
+        "accent-blue": "#2A4DD4",
+        border: "rgba(17, 17, 17, 0.08)",
       },
       fontFamily: {
-        sans: ["General Sans", "Inter", "sans-serif"],
-        heading: ["Space Grotesk", "sans-serif"],
+        sans: ["'DM Sans'", "sans-serif"],
+        heading: ["'Bricolage Grotesque'", "sans-serif"],
+        mono: ["'DM Mono'", "monospace"],
       },
     },
   },
