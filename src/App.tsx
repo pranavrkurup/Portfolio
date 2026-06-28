@@ -28,21 +28,24 @@ const projects = [
   },
 ];
 
-const skills = [
-  'Vibe Coding',
-  'AI-Assisted Development',
-  'Python (Basic Knowledge)',
-  'C (Basic Knowledge)',
-  'HTML',
-  'CSS',
-  'Tailwind CSS',
+const coreSkills = [
   'React.js',
   'Node.js',
   'Express.js',
+  'Tailwind CSS',
+  'HTML',
+  'CSS',
   'MongoDB',
   'MongoDB Atlas',
-  'Supabase',
   'MySQL',
+  'Supabase',
+  'Python (Basic Knowledge)',
+  'C (Basic Knowledge)',
+];
+
+const toolsSkills = [
+  'Prompt-Driven Development',
+  'AI-Assisted Development',
   'Git',
   'GitHub',
   'VS Code',
@@ -185,19 +188,30 @@ function App() {
 
         <section className="skills-zone">
           <div className="skills-area scrap-animate" aria-labelledby="skills-title">
-            <h2 id="skills-title">
-              <span className="heading-dot" aria-hidden="true" /> Skills
-            </h2>
-            <div className="skills-cloud" aria-label="Skills">
-              {skills.map((skill, index) => (
-                <span
-                  className={`skill-pill skill-${(index % 9) + 1}`}
-                  key={skill}
-                  style={{ '--spin': `${((index % 7) - 3) * 1.4}deg` } as CSSProperties}
-                >
-                  {skill}
-                </span>
-              ))}
+            <div className="skills-section">
+              <h2 id="core-skills-title">
+                <span className="heading-dot" aria-hidden="true" /> Core Skills
+              </h2>
+              <div className="skills-cloud" aria-label="Core Skills">
+                {coreSkills.map((skill) => (
+                  <span className="skill-pill" key={skill}>
+                    {skill}
+                  </span>
+                ))}
+              </div>
+            </div>
+
+            <div className="skills-section">
+              <h2 id="tools-skills-title">
+                <span className="heading-dot" aria-hidden="true" /> Tools & Workflows
+              </h2>
+              <div className="skills-cloud" aria-label="Tools & Workflows">
+                {toolsSkills.map((skill) => (
+                  <span className="skill-pill" key={skill}>
+                    {skill}
+                  </span>
+                ))}
+              </div>
             </div>
           </div>
         </section>
