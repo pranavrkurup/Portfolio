@@ -91,6 +91,25 @@ export default function Cover() {
             <p className="text-2xl sm:text-3xl md:text-5xl font-light text-primary tracking-tight leading-relaxed md:leading-relaxed">
               Computer Vision
             </p>
+            
+            <div className="flex flex-wrap gap-4 mt-8 md:mt-12">
+              {[
+                { label: "Instagram", url: "https://www.instagram.com/_prnvv?igsh=anM5eWJ1NmkyMmd4" },
+                { label: "LinkedIn", url: "https://www.linkedin.com/in/pranav-r-kurup-4065553a5?utm_source=share_via&utm_content=profile&utm_medium=member_android" },
+                { label: "Email", url: "mailto:pranavrkurup6@gmail.com" }
+              ].map(link => (
+                <a
+                  key={link.label}
+                  href={link.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  data-cursor="hover"
+                  className="abstract-shape px-6 py-2.5 rounded-full border border-border bg-background hover:bg-primary hover:text-background transition-all duration-300 text-xs font-mono uppercase tracking-[0.1em]"
+                >
+                  {link.label}
+                </a>
+              ))}
+            </div>
           </div>
         </div>
 

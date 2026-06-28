@@ -40,9 +40,9 @@ export default function FloatingSocials() {
   return (
     <div 
       ref={containerRef} 
-      className="fixed left-6 md:left-8 bottom-0 z-[100] hidden md:flex flex-col items-center gap-6"
+      className="fixed left-6 md:left-8 bottom-6 md:bottom-0 z-[100] flex flex-row md:flex-col items-center gap-4 md:gap-6"
     >
-      <div className="flex flex-col gap-6 items-center">
+      <div className="flex flex-row md:flex-col gap-6 items-center">
         {socials.map((social, index) => (
           <a
             key={social.name}
@@ -51,8 +51,7 @@ export default function FloatingSocials() {
             target="_blank"
             rel="noopener noreferrer"
             data-cursor="hover"
-            className="text-secondary hover:text-accent-red font-mono text-xs tracking-widest uppercase transition-all duration-300 hover:-translate-y-1 opacity-0"
-            style={{ writingMode: 'vertical-rl', transform: 'rotate(180deg)' }}
+            className="text-secondary hover:text-accent-red font-mono text-xs tracking-widest uppercase transition-all duration-300 hover:-translate-y-1 opacity-0 max-md:px-2 md:[writing-mode:vertical-rl] md:rotate-180"
           >
             {social.name}
           </a>
