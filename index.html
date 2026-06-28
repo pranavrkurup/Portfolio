@@ -304,7 +304,7 @@
             padding: 16px 32px;
             background: transparent;
             color: var(--bg);
-            transition: all 0.4s ease;
+            transition: border-color 0.4s ease, color 0.4s ease;
             text-decoration: none;
             display: inline-block;
             z-index: 3;
@@ -376,17 +376,17 @@
             position: relative;
             padding: 40px 20px;
             border-bottom: 1px solid rgba(255,255,255,0.1);
-            transition: all 0.4s ease;
             display: flex;
             align-items: center;
             overflow: hidden;
+            flex-shrink: 0;
         }
         .interest-block:first-child { border-top: 1px solid rgba(255,255,255,0.1); }
         .interest-block::before {
             content: '';
             position: absolute;
             left: 0; top: 0; bottom: 0;
-            width: 1px;
+            width: 3px;
             background-color: var(--accent);
             transform: scaleY(0);
             transition: transform 0.4s ease;
@@ -411,9 +411,24 @@
         .interest-title { font-size: clamp(28px, 4vw, 52px); color: var(--bg); }
         .interest-desc { font-family: 'Inter', sans-serif; font-size: 14px; color: var(--muted); margin-left: clamp(28px, 4vw, 52px); padding-left: 16px; }
 
+        .marquee-clone { display: none; }
+
         @media (min-width: 769px) {
-            .interests-container { flex-direction: row; flex-wrap: wrap; }
-            .interest-block { width: 100%; padding: 60px 40px; }
+            .interests-container { 
+                flex-direction: row; 
+                flex-wrap: nowrap;
+                width: max-content;
+                padding-top: 40px;
+            }
+            .interest-block { 
+                width: 600px; 
+                padding: 60px 40px;
+                border-top: 1px solid rgba(255,255,255,0.1);
+                border-right: 1px solid rgba(255,255,255,0.1);
+                border-bottom: 1px solid rgba(255,255,255,0.1);
+            }
+            .interest-block:first-child { border-left: 1px solid rgba(255,255,255,0.1); }
+            .marquee-clone { display: flex; }
         }
 
         /* 4. SKILLS */
@@ -844,39 +859,70 @@
     </section>
 
     <!-- 3. INTERESTS -->
-    <section class="dark-section" id="interests">
+    <section class="dark-section" id="interests" style="overflow-x: hidden;">
         <div class="container">
             <div class="section-eyebrow label">— 002 / INTERESTS</div>
-            <div class="interests-container">
-                <div class="interest-block">
-                    <div class="interest-ghost-num display">01</div>
-                    <div class="interest-content">
-                        <div class="interest-title-row">
-                            <span class="interest-accent-mark">—</span>
-                            <span class="interest-title fw-700">FULL-STACK WEB DEVELOPMENT</span>
-                        </div>
-                        <div class="interest-desc">"End-to-end systems, from database to deployment."</div>
+        </div>
+        <div class="interests-container">
+            <div class="interest-block">
+                <div class="interest-ghost-num display">01</div>
+                <div class="interest-content">
+                    <div class="interest-title-row">
+                        <span class="interest-accent-mark">—</span>
+                        <span class="interest-title fw-700">FULL-STACK WEB DEVELOPMENT</span>
                     </div>
+                    <div class="interest-desc">"End-to-end systems, from database to deployment."</div>
                 </div>
-                <div class="interest-block">
-                    <div class="interest-ghost-num display">02</div>
-                    <div class="interest-content">
-                        <div class="interest-title-row">
-                            <span class="interest-accent-mark">—</span>
-                            <span class="interest-title fw-700">ARTIFICIAL INTELLIGENCE & ML</span>
-                        </div>
-                        <div class="interest-desc">"Training models, reasoning with data."</div>
+            </div>
+            <div class="interest-block">
+                <div class="interest-ghost-num display">02</div>
+                <div class="interest-content">
+                    <div class="interest-title-row">
+                        <span class="interest-accent-mark">—</span>
+                        <span class="interest-title fw-700">ARTIFICIAL INTELLIGENCE & ML</span>
                     </div>
+                    <div class="interest-desc">"Training models, reasoning with data."</div>
                 </div>
-                <div class="interest-block">
-                    <div class="interest-ghost-num display">03</div>
-                    <div class="interest-content">
-                        <div class="interest-title-row">
-                            <span class="interest-accent-mark">—</span>
-                            <span class="interest-title fw-700">COMPUTER VISION</span>
-                        </div>
-                        <div class="interest-desc">"Teaching machines to see the world."</div>
+            </div>
+            <div class="interest-block">
+                <div class="interest-ghost-num display">03</div>
+                <div class="interest-content">
+                    <div class="interest-title-row">
+                        <span class="interest-accent-mark">—</span>
+                        <span class="interest-title fw-700">COMPUTER VISION</span>
                     </div>
+                    <div class="interest-desc">"Teaching machines to see the world."</div>
+                </div>
+            </div>
+            <!-- Clones for marquee -->
+            <div class="interest-block marquee-clone">
+                <div class="interest-ghost-num display">01</div>
+                <div class="interest-content">
+                    <div class="interest-title-row">
+                        <span class="interest-accent-mark">—</span>
+                        <span class="interest-title fw-700">FULL-STACK WEB DEVELOPMENT</span>
+                    </div>
+                    <div class="interest-desc">"End-to-end systems, from database to deployment."</div>
+                </div>
+            </div>
+            <div class="interest-block marquee-clone">
+                <div class="interest-ghost-num display">02</div>
+                <div class="interest-content">
+                    <div class="interest-title-row">
+                        <span class="interest-accent-mark">—</span>
+                        <span class="interest-title fw-700">ARTIFICIAL INTELLIGENCE & ML</span>
+                    </div>
+                    <div class="interest-desc">"Training models, reasoning with data."</div>
+                </div>
+            </div>
+            <div class="interest-block marquee-clone">
+                <div class="interest-ghost-num display">03</div>
+                <div class="interest-content">
+                    <div class="interest-title-row">
+                        <span class="interest-accent-mark">—</span>
+                        <span class="interest-title fw-700">COMPUTER VISION</span>
+                    </div>
+                    <div class="interest-desc">"Teaching machines to see the world."</div>
                 </div>
             </div>
         </div>
@@ -1279,10 +1325,19 @@
         });
 
         // Interests Animation
-        gsap.from('.interest-block', {
-            scrollTrigger: { trigger: '#interests', ...defaultScrollTrigger },
-            x: 60, opacity: 0, duration: 0.8, stagger: 0.2, ease: "power3.out"
-        });
+        if (window.innerWidth > 768) {
+            gsap.to('.interests-container', {
+                xPercent: -50,
+                ease: "none",
+                duration: 25,
+                repeat: -1
+            });
+        } else {
+            gsap.from('.interest-block:not(.marquee-clone)', {
+                scrollTrigger: { trigger: '#interests', ...defaultScrollTrigger },
+                x: 60, opacity: 0, duration: 0.8, stagger: 0.2, ease: "power3.out"
+            });
+        }
 
         // Skills Animation
         gsap.from('.skills-row', {
