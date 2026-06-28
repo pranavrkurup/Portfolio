@@ -5,6 +5,7 @@ import Navigation from './components/Navigation';
 import LoadingScreen from './components/LoadingScreen';
 import PageOverlay from './components/PageOverlay';
 import ScrollIndicator from './components/ScrollIndicator';
+import FloatingSocials from './components/FloatingSocials';
 
 import Cover from './components/Cover';
 import AboutMe from './components/AboutMe';
@@ -34,6 +35,7 @@ function App() {
         <>
           <Navigation />
           <ScrollIndicator />
+          <FloatingSocials />
         </>
       )}
       
