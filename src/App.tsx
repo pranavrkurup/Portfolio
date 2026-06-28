@@ -1,6 +1,7 @@
 import { useEffect, useRef } from 'react';
 import type { CSSProperties } from 'react';
 import gsap from 'gsap';
+import { FiGithub, FiLinkedin, FiInstagram, FiMail } from 'react-icons/fi';
 
 const quickTags = [
   'Bachelor of Computer Applications (BCA)',
@@ -9,14 +10,7 @@ const quickTags = [
 ];
 
 const aboutText = [
-  'I am a BCA Third Year student passionate about building modern software solutions through hands-on projects and continuous learning.',
-  'My primary interests lie in Full-Stack Web Development, Artificial Intelligence & Machine Learning, and Computer Vision. I enjoy exploring modern development workflows and building practical applications that solve real-world problems.',
-];
-
-const interests = [
-  'Full-Stack Web Development',
-  'Artificial Intelligence & Machine Learning',
-  'Computer Vision',
+  'BCA Third Year student passionate about building modern software solutions. Focused on Full-Stack Web Development, AI & Machine Learning, and Computer Vision.',
 ];
 
 const projects = [
@@ -56,19 +50,11 @@ const skills = [
 ];
 
 const exploring = [
-  'I am currently exploring and strengthening my skills in:',
-  'Full-Stack Web Development',
-  'Artificial Intelligence & Machine Learning',
-  'Computer Vision',
-  'Data Structures & Algorithms',
-  'System Design',
-  'Scalable Software Development',
-  'through hands-on projects and continuous learning.',
+  'Currently exploring: Data Structures, System Design, Scalable Software Development.',
 ];
 
 function App() {
   const cursorRef = useRef<HTMLDivElement>(null);
-  const portraitImageRef = useRef<HTMLImageElement>(null);
 
   useEffect(() => {
     const cursor = cursorRef.current;
@@ -133,34 +119,29 @@ function App() {
         <div className="corner-note corner-note-right scrap-animate" aria-hidden="true" />
 
         <header className="hero-grid">
-          <div className="quick-tags" aria-label="Identity">
-            {quickTags.map((tag, index) => (
-              <span key={tag} className={`tag-pill scrap-animate tag-${index + 1}`}>
-                {tag}
-              </span>
-            ))}
-          </div>
+          <div className="spine-left">
+            <div className="quick-tags" aria-label="Identity">
+              {quickTags.map((tag) => (
+                <span key={tag} className={`tag-pill scrap-animate`}>
+                  {tag}
+                </span>
+              ))}
+            </div>
 
-          <div className="name-lockup scrap-animate">
-            <h1>
-              <span className="name-first">Pranav</span>
-              <span className="name-last">R Kurup</span>
-            </h1>
+            <div className="name-lockup scrap-animate">
+              <h1>
+                <span className="name-first">Pranav</span>
+                <span className="name-last">R Kurup</span>
+              </h1>
+            </div>
           </div>
 
           <div className="portrait-wrap scrap-animate" aria-label="Portrait">
-            <div className="portrait-orbit" aria-hidden="true" />
-            <div className="portrait-dot portrait-dot-one" aria-hidden="true" />
-            <div className="portrait-dot portrait-dot-two" aria-hidden="true" />
-            <div className="portrait-dot portrait-dot-three" aria-hidden="true" />
             <div className="portrait-frame">
               <img
-                ref={portraitImageRef}
                 src="/src/assets/images/pranav-portrait.jpg"
                 alt="Portrait"
-                onError={() => portraitImageRef.current?.classList.add('is-missing')}
               />
-              <div className="portrait-fallback" aria-hidden="true" />
             </div>
           </div>
         </header>
@@ -175,14 +156,6 @@ function App() {
                 <p key={paragraph}>{paragraph}</p>
               ))}
             </div>
-            <ul className="interest-list">
-              {interests.map((interest) => (
-                <li key={interest}>
-                  <span aria-hidden="true">*</span>
-                  {interest}
-                </li>
-              ))}
-            </ul>
           </div>
         </section>
 
@@ -229,24 +202,56 @@ function App() {
           </div>
         </section>
 
-        <footer className="scrap-footer">
-          <div className="exploring-strip scrap-animate" aria-label="Currently Exploring">
-            <div className="marquee-track">
-              {[...exploring, ...exploring].map((item, index) => (
-                <span key={`${item}-${index}`}>{item}</span>
-              ))}
+        <footer className="footer-zone scrap-animate">
+          <hr style={{ border: '2px solid black', marginBottom: '40px' }} />
+          
+          <div className="exploring-strip" aria-label="Currently Exploring">
+            <div className="marquee-mask-wrapper">
+              <div className="marquee-track">
+                {[...exploring, ...exploring, ...exploring, ...exploring].map((item, index) => (
+                  <span key={`${item}-${index}`}>{item}</span>
+                ))}
+              </div>
             </div>
           </div>
-        </footer>
 
-        <a
-          className="github-pill scrap-animate"
-          href="https://github.com/pranavrkurup"
-          target="_blank"
-          rel="noreferrer"
-        >
-          GitHub
-        </a>
+          <div className="contact-dock">
+            <a
+              className="social-icon-btn"
+              href="https://github.com/pranavrkurup"
+              target="_blank"
+              rel="noreferrer"
+              aria-label="GitHub"
+            >
+              <FiGithub size={22} />
+            </a>
+            <a
+              className="social-icon-btn"
+              href="https://www.linkedin.com/in/pranav-r-kurup-4065553a5"
+              target="_blank"
+              rel="noreferrer"
+              aria-label="LinkedIn"
+            >
+              <FiLinkedin size={22} />
+            </a>
+            <a
+              className="social-icon-btn"
+              href="https://www.instagram.com/_prnvv"
+              target="_blank"
+              rel="noreferrer"
+              aria-label="Instagram"
+            >
+              <FiInstagram size={22} />
+            </a>
+            <a
+              className="social-icon-btn"
+              href="mailto:pranavrkurup6@gmail.com"
+              aria-label="Email"
+            >
+              <FiMail size={22} />
+            </a>
+          </div>
+        </footer>
       </section>
     </main>
   );
