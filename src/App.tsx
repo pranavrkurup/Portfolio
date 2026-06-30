@@ -2,7 +2,7 @@ import { useEffect, useRef } from 'react';
 import type { CSSProperties } from 'react';
 import gsap from 'gsap';
 import { FiGithub, FiLinkedin, FiInstagram, FiMail } from 'react-icons/fi';
-import pranavPortrait from './assets/images/pranav-portrait.png';
+import pranavPortrait from './assets/images/pranav-portrait_7_13.png';
 
 const quickTags = [
   'Bachelor of Computer Applications (BCA)',
@@ -145,6 +145,9 @@ function App() {
               <img
                 src={pranavPortrait}
                 alt="Portrait"
+                fetchpriority="high"
+                loading="eager"
+                decoding="async"
               />
             </div>
           </div>
