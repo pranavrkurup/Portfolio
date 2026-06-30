@@ -1,32 +1,67 @@
-# React + TypeScript + Vite
+# Pranav R Kurup - Personal Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+A visually striking, Neo-Brutalist personal portfolio built with React, TypeScript, and Vite. This project showcases my skills, experience, and projects while providing a highly interactive and tactile user experience.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- **Neo-Brutalist Aesthetics**: Bold typography, high contrast, stark borders, and strong drop shadows that give the UI a raw and architectural feel.
+- **Tactile Micro-interactions**: Interactive elements (buttons, project cards, skill pills) feature an "arcade button" press effect that physically pushes into the page on click.
+- **Custom Inverting Cursor**: A completely custom cursor component that tracks mouse movement and uses `mix-blend-mode: difference` to dynamically invert colors over various elements, giving a magical overlay effect. (Automatically disabled on touch devices).
+- **GSAP Animations**: Smooth, staggered entrance animations for elements across the page and an infinite marquee for the footer section.
+- **Responsive Design**: Fluidly adapts from desktop to mobile screens, ensuring a seamless experience across all devices.
 
-## React Compiler
+## Tech Stack
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- **Framework**: [React 19](https://react.dev/) with [TypeScript](https://www.typescriptlang.org/)
+- **Bundler**: [Vite 8](https://vitejs.dev/)
+- **Styling**: [Tailwind CSS 4](https://tailwindcss.com/) & Vanilla CSS (for custom neo-brutalist variables and effects)
+- **Animations**: [GSAP](https://gsap.com/) (GreenSock Animation Platform)
+- **Icons**: [React Icons](https://react-icons.github.io/react-icons/) (Feather icons)
 
-## Expanding the Oxlint configuration
+## Getting Started
 
-If you are developing a production application, we recommend enabling type-aware lint rules by installing `oxlint-tsgolint` and editing `.oxlintrc.json`:
+### Prerequisites
 
-```json
-{
-  "$schema": "./node_modules/oxlint/configuration_schema.json",
-  "plugins": ["react", "typescript", "oxc"],
-  "options": {
-    "typeAware": true
-  },
-  "rules": {
-    "react/rules-of-hooks": "error",
-    "react/only-export-components": ["warn", { "allowConstantExport": true }]
-  }
-}
+- Node.js (v18 or higher recommended)
+- npm (or yarn/pnpm/bun)
+
+### Installation
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/pranavrkurup/Portfolio.git
+   cd Portfolio
+   ```
+
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
+
+3. Start the development server:
+   ```bash
+   npm run dev
+   ```
+
+4. Open your browser and navigate to `http://localhost:5173` (or the port provided by Vite).
+
+### Build for Production
+
+To build the project for production, run:
+
+```bash
+npm run build
 ```
 
-See the [Oxlint rules documentation](https://oxc.rs/docs/guide/usage/linter/rules) for the full list of rules and categories.
+This will generate a `dist` folder containing the optimized production build.
+
+## Project Structure
+
+- `src/App.tsx`: The main application component that orchestrates the layout, sections (Hero, About, Projects, Skills, Footer), and initial GSAP animations.
+- `src/index.css`: Global stylesheet defining CSS variables (colors, fonts, radii), the neo-brutalist UI classes, smooth scrolling, and tactile hover/active states.
+- `src/components/CustomCursor.tsx`: The custom cursor component that tracks mouse coordinates and applies the inverting blend mode effect.
+- `src/assets/`: Contains static assets like images (e.g., portrait).
+
+## License
+
+This project is private and intended for personal portfolio use.
