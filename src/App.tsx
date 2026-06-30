@@ -3,7 +3,7 @@ import type { CSSProperties } from 'react';
 import gsap from 'gsap';
 import { FiGithub, FiLinkedin, FiInstagram, FiMail } from 'react-icons/fi';
 import pranavPortrait from './assets/images/pranav-portrait_7_13.png';
-
+import CustomCursor from './components/CustomCursor';
 const quickTags = [
   'Bachelor of Computer Applications (BCA)',
   'Third Year',
@@ -58,29 +58,6 @@ const exploring = [
 ];
 
 function App() {
-  const cursorRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const cursor = cursorRef.current;
-    if (!cursor || window.matchMedia('(pointer: coarse)').matches) return;
-
-    const xTo = gsap.quickTo(cursor, 'x', { duration: 0.16, ease: 'power3.out' });
-    const yTo = gsap.quickTo(cursor, 'y', { duration: 0.16, ease: 'power3.out' });
-
-    const moveCursor = (event: MouseEvent) => {
-      xTo(event.clientX);
-      yTo(event.clientY);
-      const target = event.target as HTMLElement;
-      cursor.classList.toggle(
-        'is-target',
-        Boolean(target.closest('a, button, .project-card, .skill-pill, .tag-pill')),
-      );
-    };
-
-    window.addEventListener('mousemove', moveCursor);
-    return () => window.removeEventListener('mousemove', moveCursor);
-  }, []);
-
   useEffect(() => {
     const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     if (prefersReducedMotion) {
@@ -115,7 +92,7 @@ function App() {
 
   return (
     <main className="scrapbook-page">
-      <div ref={cursorRef} className="custom-cursor" aria-hidden="true" />
+      <CustomCursor />
 
       <section className="master-card" aria-label="Pranav R Kurup portfolio">
         <div className="paper-grain" aria-hidden="true" />

@@ -1,0 +1,24 @@
+body {
+  cursor: none; /* Hides default cursor on desktop */
+}
+
+.custom-cursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 24px;
+  height: 24px;
+  border: 3px solid #ffffff;
+  border-radius: 50%;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  z-index: 9999;
+  mix-blend-mode: difference; /* This creates the color inversion */
+  transition: width 0.2s, height 0.2s;
+}
+
+/* Keep standard cursor on mobile */
+@media (pointer: coarse) {
+  body { cursor: auto; }
+  .custom-cursor { display: none; }
+}
