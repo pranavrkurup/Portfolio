@@ -237,28 +237,28 @@ a {
 }
 
 .portrait-frame {
-  width: 260px; /* Locks the width */
-  height: 260px; /* Locks the height */
-  flex-shrink: 0; /* CRITICAL: Prevents flexbox from turning this into an oval */
+  width: 260px;
+  height: 260px;
+  flex-shrink: 0;
   border-radius: 50%;
   background-color: #1D3BE2; /* Deep electric blue */
   border: 6px solid #ffffff;
   box-shadow: 8px 8px 0px #000000;
-  position: relative; /* Anchor point for the image */
-  overflow: visible; /* CRITICAL: Allows the hair to break out */
-  margin-top: -20px; /* Pulls the circle up slightly so the hair overlaps the text */
-  z-index: 10; /* Ensures the hair sits on top of the text */
+  position: relative; /* CRITICAL: Anchors the image */
+  overflow: visible; /* CRITICAL: Allows the hair to pop out */
+  margin-top: 50px; /* Pushes the circle down so the hair doesn't block the <h1> text */
+  z-index: 10;
 }
 
 .portrait-frame img {
   position: absolute;
-  bottom: 0; /* Anchors the bottom of the image flush with the bottom border */
-  left: 50%; /* Centers the image horizontally... */
-  transform: translateX(-50%); /* ...perfectly */
-  width: 85%; /* Keeps the shoulders cleanly inside the left/right borders */
-  height: auto; /* Maintains the aspect ratio so the head stretches up and out */
-  object-fit: contain;
-  pointer-events: none; /* Stops the transparent part of the image from blocking clicks */
+  bottom: 0; /* CRITICAL: Snaps the bottom of the image to the bottom border */
+  left: 50%;
+  transform: translateX(-50%); /* Centers the image horizontally */
+  width: 95%; /* Scales the image so the shoulders fit nicely inside the bottom curves */
+  height: auto;
+  z-index: 11;
+  pointer-events: none;
 }
 
 .portrait-dot-one {
