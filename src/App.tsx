@@ -2,6 +2,7 @@ import { useEffect, useRef } from 'react';
 import type { CSSProperties } from 'react';
 import gsap from 'gsap';
 import { FiGithub, FiLinkedin, FiInstagram, FiMail } from 'react-icons/fi';
+import pranavPortrait from './assets/images/pranav-portrait.png';
 
 const quickTags = [
   'Bachelor of Computer Applications (BCA)',
@@ -142,7 +143,7 @@ function App() {
           <div className="portrait-wrap scrap-animate" aria-label="Portrait">
             <div className="portrait-frame">
               <img
-                src="/src/assets/images/pranav-portrait.jpg"
+                src={pranavPortrait}
                 alt="Portrait"
               />
             </div>
