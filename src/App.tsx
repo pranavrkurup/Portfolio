@@ -29,27 +29,27 @@ const projects = [
 ];
 
 const coreSkills = [
-  'React.js',
-  'Node.js',
-  'Express.js',
-  'Tailwind CSS',
-  'HTML',
-  'CSS',
-  'MongoDB',
-  'MongoDB Atlas',
-  'MySQL',
-  'Supabase',
-  'Python (Basic Knowledge)',
-  'C (Basic Knowledge)',
+  { name: 'React.js', theme: 'blue' },
+  { name: 'Node.js', theme: 'white' },
+  { name: 'Express.js', theme: 'blue' },
+  { name: 'Tailwind CSS', theme: 'white' },
+  { name: 'HTML', theme: 'blue' },
+  { name: 'CSS', theme: 'white' },
+  { name: 'MongoDB', theme: 'blue' },
+  { name: 'MongoDB Atlas', theme: 'white' },
+  { name: 'MySQL', theme: 'blue' },
+  { name: 'Supabase', theme: 'white' },
+  { name: 'Python (Basic Knowledge)', theme: 'blue' },
+  { name: 'C (Basic Knowledge)', theme: 'white' },
 ];
 
 const toolsSkills = [
-  'Prompt-Driven Development',
-  'AI-Assisted Development',
-  'Git',
-  'GitHub',
-  'VS Code',
-  'Vercel',
+  { name: 'Prompt-Driven Development', theme: 'blue' },
+  { name: 'AI-Assisted Development', theme: 'white' },
+  { name: 'Git', theme: 'blue' },
+  { name: 'GitHub', theme: 'white' },
+  { name: 'VS Code', theme: 'blue' },
+  { name: 'Vercel', theme: 'white' },
 ];
 
 const exploring = [
@@ -195,11 +195,11 @@ function App() {
               <div className="skills-cloud" aria-label="Core Skills">
                 {coreSkills.map((skill, index) => (
                   <span
-                    className="skill-pill"
-                    key={skill}
+                    className={`skill-pill pill-${skill.theme}`}
+                    key={skill.name}
                     style={{ '--spin': `${((index * 13) % 15) - 7}deg` } as CSSProperties}
                   >
-                    {skill}
+                    {skill.name}
                   </span>
                 ))}
               </div>
@@ -212,11 +212,11 @@ function App() {
               <div className="skills-cloud" aria-label="Tools & Workflows">
                 {toolsSkills.map((skill, index) => (
                   <span
-                    className="skill-pill"
-                    key={skill}
+                    className={`skill-pill pill-${skill.theme}`}
+                    key={skill.name}
                     style={{ '--spin': `${((index * 17) % 15) - 7}deg` } as CSSProperties}
                   >
-                    {skill}
+                    {skill.name}
                   </span>
                 ))}
               </div>
